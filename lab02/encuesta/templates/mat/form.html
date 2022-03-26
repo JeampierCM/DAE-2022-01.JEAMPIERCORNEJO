@@ -1,0 +1,18 @@
+<h2>{{ titulo }}</h2>
+<form action="{% url 'encuesta:calcular' %}" method="post">
+    {% csrf_token %}
+    <h3>Ingrese Numeros</h3>
+    Primer valor:
+    <input type="float" name="valor1"><br>
+    Segundo Valor:
+    <input type="float" name="valor2"><br>
+    Selecione Operacion: 
+    <select name="operacion" id="">
+        <option value="Suma">Suma</option>
+        <option value="Resta">Resta</option>
+        <option value="Multiplicacion">Multiplicacion</option>
+        <option value="Division">Division</option>
+    </select>
+    <input type="submit" name="submit" value="calcular">
+
+</form>
