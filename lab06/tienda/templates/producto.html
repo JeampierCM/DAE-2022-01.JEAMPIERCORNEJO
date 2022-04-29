@@ -4,13 +4,16 @@
 <div class="col-lg-9">
 
     <div class="card mt-4">
-      <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
+      <img class="card-img-top img-fluid" src="{% if prod.imagen != null %}
+      {{ prod.imagen.url }}
+      {% endif %}" alt="">
       <div class="card-body">
         <h3 class="card-title">{{ producto.nombre }}</h3>
         <h4>S/.{{ producto.precio }}</h4>
         <p class="card-text">{{ producto.categoria.nombre }}</p>
         <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
         4.0 stars
+        <a class="btn btn-primary" href="{% url 'tienda:agregarCarrito' producto.id %}" role="button">Agregar Carrito</a>
       </div>
     </div>
     <!-- /.card -->
